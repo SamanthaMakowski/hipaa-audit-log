@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-07-18T15:33:28.854Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P001",
+    "outcome": "success",
+    "prevHash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "8a4f7b2797d58a2ad1bb78843589563378222b1879cdebcafdf0fbf95908d989"
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-07-18T15:33:28.860Z",
+    "actor": "frontdesk.lee",
+    "action": "viewed",
+    "target": "P001",
+    "outcome": "denied",
+    "prevHash": "8a4f7b2797d58a2ad1bb78843589563378222b1879cdebcafdf0fbf95908d989",
+    "hash": "6da5fd5b4b12962740b7ef71cc186d763022b201d7d14bcce0a911ddca4866dd"
+  }
+]
