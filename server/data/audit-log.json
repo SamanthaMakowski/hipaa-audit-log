@@ -18,5 +18,35 @@
     "outcome": "denied",
     "prevHash": "8a4f7b2797d58a2ad1bb78843589563378222b1879cdebcafdf0fbf95908d989",
     "hash": "6da5fd5b4b12962740b7ef71cc186d763022b201d7d14bcce0a911ddca4866dd"
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-07-18T17:00:52.065Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P001",
+    "outcome": "success",
+    "prevHash": "6da5fd5b4b12962740b7ef71cc186d763022b201d7d14bcce0a911ddca4866dd",
+    "hash": "fd19d4255907ad2f14e15ac32cf8051cc87c7cdc50b1caa7fc19116768103c5c"
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-07-18T17:01:29.332Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P005",
+    "outcome": "denied",
+    "prevHash": "fd19d4255907ad2f14e15ac32cf8051cc87c7cdc50b1caa7fc19116768103c5c",
+    "hash": "4f2c1c841ac64d0506823e085707f63b3ae962e6b085d04527a36efd121c079b"
+  },
+  {
+    "id": 5,
+    "timestamp": "2026-07-18T17:05:39.635Z",
+    "actor": "frontdesk.lee",
+    "action": "viewed",
+    "target": "P001",
+    "outcome": "denied",
+    "prevHash": "4f2c1c841ac64d0506823e085707f63b3ae962e6b085d04527a36efd121c079b",
+    "hash": "6705f771d3b8caaff8e292a7c96b1e94f206348a2c45e601d8e67875a61f49a8"
   }
 ]

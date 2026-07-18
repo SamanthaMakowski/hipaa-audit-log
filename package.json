@@ -1,13 +1,17 @@
 {
   "name": "hipaa-audit-log",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A HIPAA-style audit log where entries are hash-chained, so if someone edits one, it shows.",
+  "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server/server.js",
+    "test": "node server/audit/log.test.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["hipaa", "audit-log", "hash-chain", "healthcare", "compliance"],
+  "author": "Samantha Makowski",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
