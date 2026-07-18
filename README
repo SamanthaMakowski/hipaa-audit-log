@@ -1,0 +1,49 @@
+# HIPAA Audit Log
+
+An audit log for patient records where the entries are hash chained, so if someone goes back and edits one, it shows.
+
+This is the third project in a healthcare IT portfolio. The first one was about working with patient data, the second was about who is allowed to see it, and this one is about proving who actually did.
+
+Live: https://hipaa-audit-log.onrender.com (first load may take a moment on free hosting)
+
+Repo: https://github.com/SamanthaMakowski/hipaa-audit-log
+
+## What it does
+
+Four users, each with their own assigned patients. Open a record and it gets logged: who did it, which record, what action, and whether they were allowed. Refused attempts get logged too, which matters more than it sounds. If a physician goes looking at a patient he has no treatment relationship with, a system that only records successful views has no idea it happened.
+
+The trail is searchable by who, by action, by outcome, and by record, which are the four things you actually filter on when you're reviewing access.
+
+## Why it's hash chained
+
+An audit log is only worth having if you can trust it. If an admin can quietly edit a row, the trail proves nothing.
+
+So every entry stores a SHA-256 hash of its own contents plus the hash of the entry before it. That links them together. Change something in an old entry and its hash no longer matches, and because the next entry stored the old hash, the break cascades forward from that point. The verify function walks the chain and reports the first entry where it breaks.
+
+You can try it. Open server/data/audit-log.json, change an outcome from denied to success, save, and hit Verify integrity. It'll name the entry you touched.
+
+Two different checks run, because there are two different ways to cheat. Editing an entry changes its contents so the recomputed hash won't match. Deleting an entry breaks the link for the entry that came after it. The tests cover both.
+
+## What this proves and what it doesn't
+
+Being upfront about the boundary, because it matters more than the feature does.
+
+A hash chain proves entries haven't been altered or removed without it being obvious. It does not stop someone from deleting the whole file and starting a fresh chain, because a new chain is internally consistent too. It also doesn't stop someone with real access from doing damage, it just guarantees they can't do it quietly.
+
+A production system closes that gap with append only storage, replication somewhere the same admin can't reach, and publishing the latest hash externally on a schedule so there's an outside record to compare against. I didn't build those. Knowing where the line is felt more useful than pretending it wasn't there.
+
+## Running it
+
+Needs Node. Run npm install, then npm start, then open http://localhost:3000.
+
+Run the tests with npm test. Fifteen of them, covering how the chain forms, that denied attempts get recorded, and that both editing and deleting an entry get caught.
+
+## What's simplified
+
+The user dropdown is a demo convenience. Real systems know who you are from your login, and entries come from people doing their jobs across the whole application, not from a button that exists to generate them.
+
+Storage is a JSON file. It works and it makes the tamper demo easy to try, since you can open the file and edit it yourself. SQLite would be the next step.
+
+The deployed version resets. Free hosting wipes the filesystem when the service restarts, so the trail returns to the entries committed in the repo. Worth noting given the subject, an audit log that can vanish on restart is not one you'd run anywhere real. Persistent storage would be the first thing to fix.
+
+
