@@ -1,0 +1,87 @@
+cat > client/index.html << 'EOF'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Audit Trail</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Access Audit Trail</h1>
+  <div class="signed-in">
+    <label for="actor-select">Signed in as</label>
+    <select id="actor-select">
+      <option value="dr.reyes">Dr. Reyes (physician)</option>
+      <option value="nurse.patel">Nurse Patel (nurse)</option>
+      <option value="frontdesk.lee">Lee (front desk)</option>
+      <option value="admin.brooks">Brooks (admin)</option>
+    </select>
+  </div>
+</header>
+
+<main>
+
+  <section class="panel access-panel">
+    <h2>Open a record</h2>
+    <div class="controls">
+      <select id="patient-select">
+        <option value="P001">P001 Maria Gonzalez</option>
+        <option value="P002">P002 James Whitfield</option>
+        <option value="P003">P003 Aisha Rahman</option>
+        <option value="P004">P004 David Okafor</option>
+        <option value="P005">P005 Sofia Herrera</option>
+        <option value="P006">P006 Robert Feldman</option>
+      </select>
+      <button id="view-btn">View record</button>
+    </div>
+    <p id="access-result" class="result"></p>
+  </section>
+
+  <section class="panel verify-panel">
+    <h2>Chain integrity</h2>
+    <p class="note">Every entry is hash-chained to the one before it. If a past entry is altered, the chain breaks and this check finds it.</p>
+    <button id="verify-btn">Verify integrity</button>
+    <p id="verify-result" class="result"></p>
+  </section>
+
+  <section class="panel trail-panel">
+    <h2>Audit trail</h2>
+
+    <div class="filters">
+      <input type="text" id="filter-actor" placeholder="Filter by who">
+      <select id="filter-action">
+        <option value="all">All actions</option>
+        <option value="viewed">Viewed</option>
+        <option value="searched">Searched</option>
+      </select>
+      <select id="filter-outcome">
+        <option value="all">All outcomes</option>
+        <option value="success">Success</option>
+        <option value="denied">Denied</option>
+      </select>
+      <input type="text" id="filter-target" placeholder="Filter by record">
+    </div>
+
+    <table class="trail">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Who</th>
+          <th>Action</th>
+          <th>Record</th>
+          <th>Outcome</th>
+        </tr>
+      </thead>
+      <tbody id="audit-rows"></tbody>
+    </table>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
+EOF
