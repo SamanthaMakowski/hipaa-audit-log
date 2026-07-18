@@ -88,5 +88,55 @@
     "outcome": "success",
     "prevHash": "7b61c4ec949d6b267807caf8bd1f3ecf1cf0372710431d9be136c52544b81c5e",
     "hash": "8ad18ff9a2b8ef0b4235bd75c784ca1610ad6aeeaf097a3024cb7112e2948370"
+  },
+  {
+    "id": 10,
+    "timestamp": "2026-07-18T21:51:26.437Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P004",
+    "outcome": "denied",
+    "prevHash": "8ad18ff9a2b8ef0b4235bd75c784ca1610ad6aeeaf097a3024cb7112e2948370",
+    "hash": "487f7b6fb8dfccbe332b4cae37d2b1035cf185db1bc8aa1bd7716d6bc93b0710"
+  },
+  {
+    "id": 11,
+    "timestamp": "2026-07-18T21:53:42.509Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P004",
+    "outcome": "denied",
+    "prevHash": "487f7b6fb8dfccbe332b4cae37d2b1035cf185db1bc8aa1bd7716d6bc93b0710",
+    "hash": "6fcf41efe0506ae3d3ace29f99cda55cfc848b9ca5e08ea8a1c8e162ed66db1a"
+  },
+  {
+    "id": 12,
+    "timestamp": "2026-07-18T21:56:40.790Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P001",
+    "outcome": "success",
+    "prevHash": "6fcf41efe0506ae3d3ace29f99cda55cfc848b9ca5e08ea8a1c8e162ed66db1a",
+    "hash": "528dfe74a3dbe1e92e14414a809a812d0d067eb63f12c8f7c12cdd33927b9294"
+  },
+  {
+    "id": 13,
+    "timestamp": "2026-07-18T21:56:45.439Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P002",
+    "outcome": "success",
+    "prevHash": "528dfe74a3dbe1e92e14414a809a812d0d067eb63f12c8f7c12cdd33927b9294",
+    "hash": "383ebd0b913263daecc803fe8087138c39d6ddec9d997b61386cf15f02cab4c8"
+  },
+  {
+    "id": 14,
+    "timestamp": "2026-07-18T21:56:49.154Z",
+    "actor": "dr.reyes",
+    "action": "viewed",
+    "target": "P003",
+    "outcome": "success",
+    "prevHash": "383ebd0b913263daecc803fe8087138c39d6ddec9d997b61386cf15f02cab4c8",
+    "hash": "e91cea241053061eb6a1a7e190df047a83eb99f7ae2d1bac3e357d2fc702b065"
   }
 ]
