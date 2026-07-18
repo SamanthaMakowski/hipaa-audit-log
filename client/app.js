@@ -1,4 +1,3 @@
-cat > client/app.js << 'EOF'
 const actorSelect = document.getElementById("actor-select");
 const patientSelect = document.getElementById("patient-select");
 const viewBtn = document.getElementById("view-btn");
@@ -114,4 +113,3 @@ verifyBtn.addEventListener("click", async () => {
 Object.values(filters).forEach(f => f.addEventListener("input", render));
 
 loadTrail();
-EOF
