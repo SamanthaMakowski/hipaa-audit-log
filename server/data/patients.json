@@ -1,0 +1,38 @@
+[
+  {
+    "id": "P001",
+    "name": "Maria Gonzalez",
+    "dateOfBirth": "1985-03-14",
+    "mrn": "MRN-48120"
+  },
+  {
+    "id": "P002",
+    "name": "James Whitfield",
+    "dateOfBirth": "1972-11-02",
+    "mrn": "MRN-48121"
+  },
+  {
+    "id": "P003",
+    "name": "Aisha Rahman",
+    "dateOfBirth": "1990-07-25",
+    "mrn": "MRN-48122"
+  },
+  {
+    "id": "P004",
+    "name": "David Okafor",
+    "dateOfBirth": "1968-01-09",
+    "mrn": "MRN-48123"
+  },
+  {
+    "id": "P005",
+    "name": "Sofia Herrera",
+    "dateOfBirth": "1995-09-30",
+    "mrn": "MRN-48124"
+  },
+  {
+    "id": "P006",
+    "name": "Robert Feldman",
+    "dateOfBirth": "1957-05-18",
+    "mrn": "MRN-48125"
+  }
+]
